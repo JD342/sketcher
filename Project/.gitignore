@@ -1,2 +1,7 @@
 # NPM generated
-/node_modules
+/node_modules/*
+
+# Preserve links to js sources
+!/node_modules/components
+!/node_modules/helpers
+!/node_modules/modules
