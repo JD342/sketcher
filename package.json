@@ -1,0 +1,17 @@
+{
+  "name": "sketcher",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "electron --enable-transparent-visuals --js-flags='--harmony' ."
+  },
+  "devDependencies": {
+    "auto-bind-proxy": "^1.0.0",
+    "death": "^1.1.0",
+    "electron": "^1.6.0",
+    "electron-prebuilt": "^1.4.13",
+    "electron-window-state": "^4.0.2",
+    "gulp": "^3.9.1",
+    "mz": "^2.6.0"
+  }
+}
