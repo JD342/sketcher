@@ -1,3 +1,5 @@
+'use strict';
+
 const { exec } = require('mz/child_process');
 const { spawn } = require('child_process');
 const ab = require('auto-bind-proxy');
