@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "gulp --harmony",
+    "postinstall": "sudo apt install xdotool -y"
   },
   "devDependencies": {
     "auto-bind-proxy": "^1.0.0",
@@ -11,6 +12,8 @@
     "electron": "^1.6.0",
     "electron-window-state": "^4.0.2",
     "gulp": "^3.9.1",
-    "mz": "^2.6.0"
+    "mz": "^2.6.0",
+    "timeout": "^0.2.1",
+    "timeout-as-promise": "^1.0.0"
   }
 }
