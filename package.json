@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "electron --enable-transparent-visuals --js-flags='--harmony' ."
+    "start": "gulp --harmony",
   },
   "devDependencies": {
     "auto-bind-proxy": "^1.0.0",
