@@ -2,10 +2,10 @@
 
 const { dirname } = require('path');
 
-exports.currDoc = () => {
+exports.getCurrDoc = () => {
     return document.currentScript.ownerDocument;
 };
 
-exports.currDocDir = () => {
+exports.getCurrDocDir = () => {
     return dirname(exports.currDoc().URL);
 };
