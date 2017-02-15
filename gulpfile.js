@@ -30,7 +30,6 @@ task('default', ['run'], () => {
         //   process.kill(-pid) is needed.
         //
         const electron = spawn('node_modules/.bin/electron', [
-            '--enable-transparent-visuals',
             '--js-flags="--harmony"',
             'source/main.js'
         ], { detached: true });
