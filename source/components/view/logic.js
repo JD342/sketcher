@@ -2,17 +2,33 @@
 
 (() => {
 
-    console.log('yee');
+    const initCanvas = Symbol();
 
-    class SketcherApp extends HTMLElement {
+    class ViewElement extends HTMLElement {
 
         constructor() {
             super();
-            console.log('wohoo!');
+            this[initCanvas]();
+        }
+
+        [initCanvas]() {
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            this.appendChild(canvas);
+            window.addEventListener('resize', onResize);
+            onResize();
+
+            function onResize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                context.fillText('hello', 100, 100);
+            }
+
         }
 
     }
 
-    customElements.define('sketcher-app', SketcherApp);
+    customElements.define('app-view', ViewElement);
 
 })();
