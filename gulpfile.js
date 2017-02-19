@@ -2,14 +2,50 @@
 
 const { createInterface } = require('readline');
 const { exec } = require('mz/child_process');
+const { readFile, writeFile } = require('mz/fs');
 const { spawn } = require('child_process');
 const ab = require('auto-bind-proxy');
-const { task, watch, parallel } = ab(require('gulp'));
+const { task, watch, parallel, dest } = ab(require('gulp'));
+const { prompt } = require('inquirer');
+const file = require('gulp-file');
 const listenDeath = require('death');
 const timeout = require('timeout-as-promise');
 
 task('default', ['run'], () => {
-    watch('source/**/*', ['run']);
+
+    watch('source/**/*', parallel(
+        'run',
+        ['sync-remotes', 'run-remotes']
+    ));
+
+});
+
+task('add-remote', async () => {
+    const { address } = await prompt({ name: 'address', message: 'Remote host:', type: 'input' });
+    const arr = await readFile('.remotes.json', 'utf8').then(
+        (json) => [...new Set([...JSON.parse(json), address])],
+        () => [address]
+    );
+    await writeFile('.remotes.json', JSON.stringify(arr));
+});
+
+task('rm-remote', async () => {
+    const { address } = await prompt({ name: 'address', message: 'Remote host:', type: 'input' });
+    const set = new Set(JSON.parse(await readFile('.remotes.json', 'utf8')));
+    set.delete(address);
+    await writeFile('.remotes.json', JSON.stringify([...set]));
+});
+
+task('run-remotes', () => {
+    readFile('.remotes.json').then(
+        (json) => {
+            const remotes = new Set(JSON.parse(json));
+            for (const remote of remotes) {
+
+            }
+        },
+        () => {}
+    );
 });
 
 (() => {

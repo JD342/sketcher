@@ -1,0 +1,7 @@
+{
+    "ecmaVersion": 7,
+    "libs": ["ecmascript", "node"],
+    "plugins": {
+        "node": {}
+    }
+}

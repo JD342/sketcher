@@ -4,6 +4,11 @@
   "private": true,
   "scripts": {
     "start": "gulp --harmony",
+    "add-remote": "gulp --harmony add-remote",
+    "rm-remote": "gulp --harmony rm-remote",
+    "sync-remotes": "gulp --harmony sync-remotes",
+    "clean-remotes": "gulp --harmony clean-remotes",
+    "run-remotes": "gulp --harmony run-remotes",
     "postinstall": "sudo apt install xdotool -y"
   },
   "devDependencies": {
@@ -12,6 +17,8 @@
     "electron": "^1.6.0",
     "electron-window-state": "^4.0.2",
     "gulp": "^3.9.1",
+    "gulp-file": "^0.3.0",
+    "inquirer": "^3.0.1",
     "mz": "^2.6.0",
     "timeout": "^0.2.1",
     "timeout-as-promise": "^1.0.0"
