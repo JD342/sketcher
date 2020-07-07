@@ -14,7 +14,7 @@
   "devDependencies": {
     "auto-bind-proxy": "^1.0.0",
     "death": "^1.1.0",
-    "electron": "^1.6.0",
+    "electron": "^9.1.0",
     "electron-window-state": "^4.0.2",
     "gulp": "^3.9.1",
     "gulp-file": "^0.3.0",
